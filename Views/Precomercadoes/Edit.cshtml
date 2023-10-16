@@ -1,4 +1,4 @@
-﻿@model TrabalhoCamadaPersistencia.Models.Especie
+﻿@model TrabalhoCamadaPersistencia.Models.Precomercado
 
 @{
     ViewData["Title"] = "Edit";
@@ -7,7 +7,7 @@
 
 <h1>Editar</h1>
 
-<h4>Especie</h4>
+<h4>Preços</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,19 +15,23 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="id" />
             <div class="form-group">
-                <label asp-for="descricao" class="control-label"></label>
-                <input asp-for="descricao" class="form-control" />
-                <span asp-validation-for="descricao" class="text-danger"></span>
+                <label asp-for="preco" class="control-label"></label>
+                <input asp-for="preco" class="form-control" />
+                <span asp-validation-for="preco" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-outline-dark" />
+                <label asp-for="animal" class="control-label"></label>
+                <input asp-for="animal" class="form-control" />
+                <span asp-validation-for="animal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-dark" />
                 <a type="button" class="btn btn-outline-dark" asp-action="Index">Voltar á Lista</a>
 
             </div>
         </form>
     </div>
 </div>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

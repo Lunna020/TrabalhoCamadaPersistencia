@@ -10,6 +10,9 @@ namespace TrabalhoCamadaPersistencia.Models
 
         public DbSet<Racas1> Racas { get; set; }
     
+        public DbSet<Tutor> Tutores { get; set; }
+        
+        public DbSet<Precomercado> Precosmercado { get; set;}
     }
 
 }

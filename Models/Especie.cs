@@ -7,10 +7,13 @@ namespace TrabalhoCamadaPersistencia.Models
     public class Especie
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name ="ID: ")]
         public int id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Campo Espécie é obrigatório...")]
         [StringLength(30)]
+        [Display(Name ="Especie: ")]
         public string descricao { get; set; }
 
     }
