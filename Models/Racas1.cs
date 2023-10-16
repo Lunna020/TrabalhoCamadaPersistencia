@@ -7,9 +7,15 @@ namespace TrabalhoCamadaPersistencia.Models
     public class Racas1
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name ="ID: ")]
         public int Id { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage = "Campo Raça é obrigatório...")]
         [StringLength(30)]
+        [Display(Name = "Raça: ")]
         public string Raca { get; set; }
+     
     }
 }

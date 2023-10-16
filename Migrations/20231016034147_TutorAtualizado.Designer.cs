@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrabalhoCamadaPersistencia.Models;
 
@@ -10,9 +11,11 @@ using TrabalhoCamadaPersistencia.Models;
 namespace TrabalhoCamadaPersistencia.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20231016034147_TutorAtualizado")]
+    partial class TutorAtualizado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,27 +40,6 @@ namespace TrabalhoCamadaPersistencia.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Especies");
-                });
-
-            modelBuilder.Entity("TrabalhoCamadaPersistencia.Models.Precomercado", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("animal")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<float>("preco")
-                        .HasColumnType("real");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Precos");
                 });
 
             modelBuilder.Entity("TrabalhoCamadaPersistencia.Models.Racas1", b =>
